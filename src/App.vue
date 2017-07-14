@@ -1,45 +1,28 @@
 <template>
-   <div id="app">
-        {{ msg }}
-   </div>
+   <div class="container">
+      <app-header></app-header>
+      <hr>
+      <div class="row">
+         <app-servers></app-servers>
+         <app-server-details></app-server-details>
+      </div>
+      <hr>
+      <app-footer></app-footer>
+    </div>
 </template>
 
 <script>
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
+import ServerList from "./ServerList.vue";
+import ServerStatus from "./ServerStatus.vue";
+
 export default {
-   name: "app",
-   data() {
-      return {
-         msg: "Hello It's Me Again. ;)"
-      };
+   components: {
+      "app-header": Header,
+      "app-servers": ServerList,
+      "app-server-details": ServerStatus,
+      "app-footer": Footer
    }
 };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>

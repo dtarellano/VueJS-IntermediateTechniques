@@ -1,6 +1,6 @@
 # vue-intermediate
 
-> A Vue.js Tutorial by Instructor.  Learning Intermediate level Techniques.
+> Learning VueJS by Coding Along with Instructor.  Certain parts were given to me by instructor. JavaScript code was written by me to practice what I have learned so far.
 
 ## Build Setup
 
