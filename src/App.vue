@@ -1,13 +1,14 @@
 <template>
    <div class="container">
-      <Header/>
+      <app-header/>
       <hr>
       <div class="row">
-         <ServerList/>
+         <button @click="serverName">Change Server Names</button>
+         <ServerList :name="name"/>
          <ServerStatus/>
       </div>
       <hr>
-      <Footer/>
+      <app-footer/>
     </div>
 </template>
 
@@ -18,11 +19,28 @@ import ServerList from "./Components/ServerList.vue";
 import ServerStatus from "./Components/ServerStatus.vue";
 
 export default {
+   data() {
+      return {
+         name: "Freddy",
+         nameChange: false
+      };
+   },
+   methods: {
+      serverName() {
+         if (this.nameChange) {
+            this.name = "Freddy";
+            this.nameChange = false;
+            return;
+         }
+         this.name = "Dave";
+         this.nameChange = true;
+      }
+   },
    components: {
-      Header,
+      "app-header": Header,
       ServerList,
       ServerStatus,
-      Footer
+      "app-footer": Footer
    }
 };
 </script>
