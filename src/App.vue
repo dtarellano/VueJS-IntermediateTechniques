@@ -3,7 +3,6 @@
       <app-header/>
       <hr>
       <div class="row">
-         <button @click="serverName">Change Server Names</button>
          <ServerList :name="name"/>
          <ServerStatus/>
       </div>

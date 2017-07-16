@@ -1,36 +1,37 @@
 <template>
-   <li class="list-group-item" :style="serverStatus ? stable : warning">
+   <li class="list-group-item"
+       :style="this.server.status === 'Stable' ? stable : warning"
+       @click="selectServer">
       Server # {{ server.id }} Status: {{ server.status }}
    </li>
 
 </template>
 
 <script>
+import { serverBus } from "../main";
+
 export default {
    props: ["server"],
-   data() {
-      return {
-         serverStatus: true
-      };
-   },
    methods: {
-      changeStyle() {
-         if (server.status !== "Stable") {
-            this.serverStatus = false;
-         }
+      selectServer() {
+         serverBus.$emit("selectServer", this.server);
       }
    },
    computed: {
       warning() {
          return {
             border: "3px solid red",
-            backgroundColor: "pink"
+            backgroundColor: "pink",
+            borderRadius: "10px",
+            marginTop: "5px"
          };
       },
       stable() {
          return {
             border: "3px solid green",
-            backgroundColor: "lightgreen"
+            backgroundColor: "lightgreen",
+            borderRadius: "10px",
+            marginTop: "5px"
          };
       }
    }
