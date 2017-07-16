@@ -37,19 +37,3 @@ export default {
    }
 };
 </script>
-
-<style scoped>
-   .red {
-      border: 3px solid red;
-      border-radius: 10px;
-      background-color: pink;
-      margin-top: 5px;
-   }.
-
-   .green {
-      border: 3px solid green;
-      border-radius: 10px;
-      background-color: lightgreen;
-      margin-top: 5px;
-   }
-</style>

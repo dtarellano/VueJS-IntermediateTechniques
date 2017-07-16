@@ -18,23 +18,6 @@ import ServerList from "./Components/ServerList.vue";
 import ServerStatus from "./Components/ServerStatus.vue";
 
 export default {
-   data() {
-      return {
-         name: "Freddy",
-         nameChange: false
-      };
-   },
-   methods: {
-      serverName() {
-         if (this.nameChange) {
-            this.name = "Freddy";
-            this.nameChange = false;
-            return;
-         }
-         this.name = "Dave";
-         this.nameChange = true;
-      }
-   },
    components: {
       "app-header": Header,
       ServerList,
